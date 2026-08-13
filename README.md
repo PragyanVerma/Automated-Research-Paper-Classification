@@ -1,46 +1,55 @@
 # NLP-Based Research Paper Classification
 
-This project aims to simplify the process of categorizing research papers on submission platforms. By analyzing the title and abstract of papers, our system intelligently predicts the most relevant categories from a set of 57 classes, streamlining the submission workflow and enhancing the user experience.
+This repository contains an end-to-end Machine Learning pipeline to automate the process of categorizing research papers on academic submission platforms. By analyzing the title and abstract of submitted papers, this system predicts the most relevant categories across 57 distinct classes, streamlining the submission workflow and enhancing user experience.
 
-## Overview
+---
 
-When submitting research papers, authors are often required to manually select categories that best describe their work. Given the vast array of available categories, this task can be daunting and time-consuming. Our solution leverages state-of-the-art NLP models to automate this process, providing category suggestions based on the content of the paper's title and abstract.
+## 📌 Project Overview
 
-## Models Used
+When submitting research papers, authors are traditionally required to manually select subject categories. Given the vast array of available domains, this task can be time-consuming and subjective. 
 
-We have employed and fine-tuned several advanced models for this task:
-- **RoBERTa**: A robustly optimized BERT variant known for its effectiveness in various NLP tasks.
-- **DeBERTa**: Enhances BERT and RoBERTa with a disentangled attention mechanism.
-- **DeBERTa-Large**: A larger variant of DeBERTa, providing even more powerful contextual embeddings.
+This solution leverages state-of-the-art Natural Language Processing (NLP) transformer models to automate the categorization process, suggesting relevant subject tags based on textual analysis of the paper's title and abstract.
 
-An ensemble approach was used to combine the strengths of each model, leading to improved prediction accuracy.
+---
 
-## Performance
+## 🛠️ Models & Architecture
 
-The ensemble model achieved an F1 Score of 0.70, indicating a high degree of precision and recall in classifying research papers into the correct categories.
+Several advanced transformer-based language models were fine-tuned for this multi-label classification task:
 
-## Project Structure
+*   **RoBERTa**: A robustly optimized BERT approach utilizing dynamic masking and larger batch sizes for robust representation learning.
+*   **DeBERTa**: Enhances RoBERTa with a disentangled attention mechanism and an enhanced mask decoder.
+*   **DeBERTa-Large**: A larger scaling of DeBERTa providing stronger contextual embeddings.
 
-The project includes the following Jupyter notebooks:
+An ensemble approach was implemented to combine prediction probabilities from each model, resulting in more stable and robust predictions.
 
-- **DeBERTa Script**: [Link](https://github.com/KrishnaMahalka/kriti24/blob/9cea4944176256e59cfbd3223c13ac55fb570b8d/deberta.ipynb)
-- **DeBERTa Training Script** (Overfit Model): [Link](https://github.com/KrishnaMahalka/kriti24/blob/e711dc5c31935855064b6f85cf631fa18dff36af/deberta6.ipynb)
-- **DeBERTa-Large Script**: [Link](https://github.com/KrishnaMahalka/kriti24/blob/33118842747759544ac7f06259deebe7553ff8c7/debertalarge.ipynb)
-- **RoBERTa Script**: [Link](https://github.com/KrishnaMahalka/kriti24/blob/c55e55812723cdcf8ca711d1e826607e3ae63a4f/roberta3.ipynb)
-- **Inference Notebook**: [Link](https://github.com/KrishnaMahalka/kriti24/blob/master/%5BINFER%5D%20Kameng.ipynb)
+### Performance
+The combined ensemble model achieved a **Weighted F1 Score of 0.70**, demonstrating reliable performance across the 57 different target classes.
 
-Each notebook contains detailed steps for model training, fine-tuning, and inference.
+---
 
-## Future Work
+## 📂 Project Structure
 
-- **Web Application**: Development of a Flask-based web application to make the model accessible to a broader audience.
-- **Model Enhancement**: Ongoing research to further improve the model's accuracy and efficiency.
+This repository includes the following Jupyter notebooks:
 
-## Contributions and Queries
+*   **[DeBERTa Script](https://github.com/PragyanVerma/Automated-Research-Paper-Classification/blob/main/deberta.ipynb)**: Code for training the base DeBERTa model.
+*   **[DeBERTa Training Script (Alternative Configuration)](https://github.com/PragyanVerma/Automated-Research-Paper-Classification/blob/main/deberta6.ipynb)**: Experimental DeBERTa training run.
+*   **[DeBERTa-Large Script](https://github.com/PragyanVerma/Automated-Research-Paper-Classification/blob/main/debertalarge.ipynb)**: Fine-tuning pipeline for the DeBERTa-Large model.
+*   **[RoBERTa Script](https://github.com/PragyanVerma/Automated-Research-Paper-Classification/blob/main/roberta3.ipynb)**: Training notebook for the RoBERTa model.
+*   **[Inference Pipeline](https://github.com/PragyanVerma/Automated-Research-Paper-Classification/blob/main/inference.ipynb)**: Complete end-to-end script for running inference and generating final predictions on unseen abstracts.
 
-We welcome contributions from the community to make this project more robust and versatile. For queries or contributions, please contact:
+---
 
--Krishna Mahalka
--Rahul Jat
-- Email: [krishnamahalka3@gmail.com](krishnamahalka3@gmail.com)
-- Email: [rahuljat13290@gmail.com](rahuljat13290@gmail.com)
+## 🚀 Future Scope
+
+*   **Web Application**: Developing a Flask or FastAPI web interface to allow users to paste a title and abstract to receive real-time category predictions.
+*   **Model Optimization**: Exploring lighter models (like DistilBERT) to reduce inference latency and computational overhead.
+
+---
+
+## 🤝 Contact & Contributions
+
+Contributions and suggestions are welcome. Feel free to open an issue or submit a pull request.
+
+**Author:** Pragyan Verma  
+**Email:** lilcole1511@gmail.com  
+**GitHub:** [PragyanVerma](https://github.com/PragyanVerma)
